@@ -14,8 +14,8 @@ body{
 }
 
 
+
 @plugin "tailwindcss-animate";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -139,8 +139,10 @@ body{
   .mars-font{
     font-family: mars;
   }
-
   .test{
     @apply border-solid border-2 border-black;
+  }
+  .align-element{
+    @apply max-w-6xl mx-auto px-8;
   }
 }

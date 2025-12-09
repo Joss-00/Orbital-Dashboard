@@ -1,6 +1,14 @@
+import LinksMobile from "./LinksMobile"
+import LinksDesktop from "./LinksDesktop"
+
 const Navbar = () => {
   return (
-    <nav className="test">Navbar</nav>
+    <nav className="bg-black text-white py-5">
+      <div className="align-element">
+        <LinksMobile />
+        <LinksDesktop />
+      </div>
+    </nav>
   )
 }
 
