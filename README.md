@@ -25,7 +25,7 @@ This project is still in its early development phase and will evolve over time.
 - API integration (coming soon)
 
 ## Project Structure (simplified)
-
+```
 src/
   assets/            # Images, icons, static files
   components/        # Reusable UI components
@@ -42,7 +42,7 @@ tailwind.config.js   # TailwindCSS configuration
 tsconfig.json        # TypeScript settings
 eslint.config.js     # Linting configuration
 .gitignore
-
+```
 ## Installation
 ```
 npm install
