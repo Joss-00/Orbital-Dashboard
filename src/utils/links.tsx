@@ -1,0 +1,14 @@
+export type Link = {
+    ref: string;
+    label: string;
+
+};
+
+export const links: Link[] = [
+    {ref: "/", label:"home"} ,
+    {ref: "/spacex", label:"spacex"} ,
+    {ref: "/webb", label:"webb"} ,
+    {ref: "/hubble", label:"hubble"} ,
+    {ref: "/news", label:"news"} ,
+    {ref: "/apod", label:"NASA's day photo"}
+]
