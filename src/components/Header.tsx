@@ -7,7 +7,7 @@ const Header = (): ReactNode => {
     <header className="bg-black">
       <div className="align-element grid grid-cols-2 md:grid-cols-3 p-2">
         <Link to ="/" className="justify-self-start self-center">
-          <h1 className="mars-font text-lg pt-2 tracking-[0.8rem] text-white">Alphaspace</h1>
+          <h1 className="mars-font text-lg pt-2 tracking-[0.8rem] text-white">Orbital Dashboard</h1>
         </Link>
         <Link to ="/" className="justify-self-end self-center md:justify-self-center">
           <img src={spaceImg} alt="logo-top" className="h-12 w-12 object-cover" />

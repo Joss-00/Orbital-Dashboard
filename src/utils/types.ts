@@ -1,7 +1,6 @@
 export type News = {
   id: number;
   title: string;
-  authors: Author[];
   url: string;
   image_url: string;
   news_site: string;
@@ -19,3 +18,9 @@ export type NewsResponse = {
   previous: string ;
   results: News[];
 };
+
+export type FiltersParams = {
+  term? : string;
+}
+
+export type NewsResponseWithParams = {response: NewsResponse ; params: FiltersParams}
