@@ -7,7 +7,7 @@ const Footer = (): ReactNode => {
       <div className="align-element min-h-[15vh] flex flex-col justify-center items-center">
         <p className="my-2">-2025-</p>
         <p className="mars-font text-2xl my-4 text-center">Orbital Dashboard, by Joss</p>
-        <p className="underline">resources:</p>
+        <p className="underline">Resources:</p>
         <p className="text-center">
           <Link to={"https://www.nasa.gov/"} target="_blank">Nasa</Link>|
           <Link to={"https://api.nasa.gov/"} target="_blank">Nasa API</Link>| 

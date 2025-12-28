@@ -1,17 +1,27 @@
-import type { NewsResponse } from "@/utils/types";
+import type { HubbleImagesResponse, News, NewsResponse } from "@/utils/types";
 import type { ReactNode } from "react";
 import NewsPageCard from "./NewsPageCard";
 
-const CardsGrid = ({objects, mode}: {objects: NewsResponse; mode: string}): ReactNode => {
+const CardsGrid = ({objects, mode}: {objects: NewsResponse | HubbleImagesResponse; mode: string}): ReactNode => {
   console.log(mode);
 
-  return (
-    <div className="grid grid-cols-1 gap-y-4 auto-rows-[600px] lg:auto-rows-[300px]">
+  if (mode === "hubble-page"){
+      return (
+      <div className="grid gap-2 auto-rows-fr grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {objects.results.map((item, index) => (
+          <div className="test"></div>
+        ))}
+      </div>
+    );
+  } else if(mode === "news-page"){
+    return <div className="grid grid-cols-1 gap-y-4 auto-rows-[600px] lg:auto-rows-[300px]">
       {objects.results.map((item, index) => (
-        <NewsPageCard news={item} key={index}/>
+        <NewsPageCard news={item as News} key={index}/>
       ))}
     </div>
-  );
+  }
+  return null;
 };
+
 
 export default CardsGrid;
