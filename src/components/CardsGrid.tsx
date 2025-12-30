@@ -1,15 +1,16 @@
-import type { HubbleImagesResponse, News, NewsResponse } from "@/utils/types";
+import type { HubbleImage, HubbleImagesResponse, News, NewsResponse } from "@/utils/types";
 import type { ReactNode } from "react";
 import NewsPageCard from "./NewsPageCard";
+import HubbleCard from "./HubbleCard";
 
 const CardsGrid = ({objects, mode}: {objects: NewsResponse | HubbleImagesResponse; mode: string}): ReactNode => {
   console.log(mode);
 
   if (mode === "hubble-page"){
       return (
-      <div className="grid gap-2 auto-rows-fr grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="mb-16 grid gap-2 auto-rows-fr grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {objects.results.map((item, index) => (
-          <div className="test"></div>
+          <HubbleCard image={item as HubbleImage} key={index}/>
         ))}
       </div>
     );
@@ -20,7 +21,6 @@ const CardsGrid = ({objects, mode}: {objects: NewsResponse | HubbleImagesRespons
       ))}
     </div>
   }
-  return null;
 };
 
 

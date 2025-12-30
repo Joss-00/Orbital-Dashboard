@@ -15,7 +15,8 @@ body{
 }
 
 :root{
-  --clr-violet: #86198f ;
+  --clr-violet: #86198f;
+  --clr-violet-light: #d660e0;
 }
 
 @plugin "tailwindcss-animate";
@@ -150,5 +151,13 @@ body{
   }
   .section{
     @apply min-h-screen max-w-6xl mx-auto px-0 py-12;
+  }
+  .slider-card{
+    transtion: all 0.2s ease-out;
+  }
+
+  .slider-card:hover{
+    transform: translate(-2px, -2px);;
+    box-shadow: -2px -2px 0px 0px rgba(0, 0, 0, 0.75);
   }
 }

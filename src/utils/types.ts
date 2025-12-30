@@ -54,3 +54,16 @@ export type HubbleImagesResponse = {
   total_count: number;
   results: HubbleImage[];
 }
+
+export type HubbleImagesResponseWithParams = {response: HubbleImagesResponse; params: FiltersParams}
+
+export type Apodtype = {
+  copyright: string,
+  date: string,
+  explanation: string,
+  hdurl: string,
+  media_type: string,
+  service_version: string,
+  title: string,
+  url: string
+};
