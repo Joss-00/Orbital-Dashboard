@@ -10,3 +10,7 @@ export {default as Title} from "./Title";
 export {default as Overview} from "./Overview";
 export {default as Filters} from "./Filters";
 export {default as FormInput} from "./FormInput";
+export {default as RelatedNews} from "./RelatedNews";
+export {default as NewsCard} from "./NewsCard";
+export {default as WebbTelescopSummary} from "./WebbTelescopSummary";
+export {default as ImageCard} from "./ImageCard";
