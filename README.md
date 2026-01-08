@@ -1,10 +1,9 @@
 # Orbital Dashboard
 
-Orbital Dashboard is a React + TypeScript application inspired by space mission control interfaces.  
-The goal of the project is to build a clean, modern frontend architecture using reusable components,
-responsive UI styling with TailwindCSS, and routing powered by React Router.
+Orbital Dashboard is a web application built with React and TypeScript, inspired by space mission control interfaces. The project focuses on building a clean and scalable frontend architecture while integrating real-world space data from multiple public APIs.
 
-This project is still in its early development phase and will evolve over time.
+The application aggregates and displays data from NASA, Hubble, JWST and Spaceflight News, with an emphasis on readability, performance and maintainable code structure.
+Functional and stable application, designed to be extended with additional pages and features.
 
 ## Tech Stack
 - React 18
@@ -16,13 +15,13 @@ This project is still in its early development phase and will evolve over time.
 - Lucide Icons
 - shadcn/ui
 
-## Features (current & planned)
-- Project setup with React + TypeScript + Vite
-- Global styling with TailwindCSS
-- Modular folder structure
-- Client-side routing (coming soon)
-- UI components (coming soon)
-- API integration (coming soon)
+## Features
+- Multi-API integration (NASA APOD, Hubble, JWST, Spaceflight News)
+- Client-side routing with React Router
+- Responsive UI with reusable components
+- Data fetching with loaders and error handling
+- Grid-based layouts and dynamic content rendering
+- Centralized utilities and typed API responses
 
 ## Project Structure (simplified)
 ```
@@ -36,12 +35,6 @@ src/
   main.tsx           # App entry point
 
 public/              # Static assets
-
-vite.config.ts       # Vite configuration
-tailwind.config.js   # TailwindCSS configuration
-tsconfig.json        # TypeScript settings
-eslint.config.js     # Linting configuration
-.gitignore
 ```
 ## Installation
 ```
