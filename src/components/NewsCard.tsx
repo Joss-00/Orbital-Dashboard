@@ -8,7 +8,7 @@ const NewsCard = ({news}: {news: News}) => {
     const {image_url, title , news_site, url} = news;
     const [imgError, setImgError] = useState(false)
   return (
-    <Card className="relative text-white border-0">
+    <Card className="relative text-white border-0 slider-card">
         <Link to={url} target="_blank">
             <CardHeader className="absolute top-1 left-1 p-0 capitalize">{news_site}</CardHeader>
             <CardContent className="h-full w-full p-0">
@@ -20,7 +20,12 @@ const NewsCard = ({news}: {news: News}) => {
                     </div>
                 )}
             </CardContent>
-            <CardFooter className="absolute bottom-0 p-2 font-extrabold text-xl leading-5">{title}</CardFooter>
+            <CardFooter className= {
+                imgError
+                ? "absolute bottom-0 p-2 font-extrabold text-xl leading-5"
+                : "absolute bottom-0 p-2 font-extrabold text-xl leading-5 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"}>
+                    {title}
+            </CardFooter>
         </Link>
     </Card>
   )

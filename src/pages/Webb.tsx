@@ -63,7 +63,6 @@ const Webb = () => {
       {imagery && <CardsGrid objects={imagery} mode="imagery" />}
     </section>
   )
-  console.log();
   
 }
 
