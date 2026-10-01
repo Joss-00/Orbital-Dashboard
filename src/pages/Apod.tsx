@@ -1,20 +1,25 @@
 import { Title } from "@/components";
 import ApodPlayer from "@/components/ApodPlayer";
 import { nasaCustomFetch } from "@/utils/customFetch"
-import { numberToDate } from "@/utils/function";
+import { numberToApodDate } from "@/utils/function";
 import type { Apodtype } from "@/utils/types";
 import { useEffect, useState } from "react";
 import { useLoaderData, type LoaderFunction } from "react-router-dom";
 
-export const apodPageLoader: LoaderFunction = async(): Promise <Apodtype | null> => {
+export const apodPageLoader: LoaderFunction = async (): Promise<Apodtype | null> => {
   try {
-    const response = await nasaCustomFetch.get<Apodtype>("");
-    return response.data
+    const date = numberToApodDate(0);
+
+    const response = await nasaCustomFetch.get<Apodtype>(
+      `/apod-basic/${date}`
+    );
+
+    return response.data;
   } catch (error) {
-    console.log(error);
-    return null
+    console.error("Unable to load APOD:", error);
+    return null;
   }
-}
+};
 
 const Apod = () => {
   const defaultApod = useLoaderData() as Apodtype
@@ -23,19 +28,23 @@ const Apod = () => {
   const [isLoading, SetIsLoading] =  useState<boolean>(false)
   console.log(defaultApod);
 
-  const fetchApod = async(day:number):Promise<void | null> => {
-    SetIsLoading(true)
-    try {
-      const params = {date: numberToDate(day)};
-      const response = await nasaCustomFetch.get<Apodtype>("", {params})
-      setData(response.data)
-      SetIsLoading(false)
-    } catch (error) {
-      console.log(error);
-      SetIsLoading(false)
-      return null
-    }
+  const fetchApod = async (day: number): Promise<void> => {
+  SetIsLoading(true);
+
+  try {
+    const date = numberToApodDate(day);
+
+    const response = await nasaCustomFetch.get<Apodtype>(
+      `/apod-basic/${date}`
+    );
+
+    setData(response.data);
+  } catch (error) {
+    console.error("Unable to fetch APOD:", error);
+  } finally {
+    SetIsLoading(false);
   }
+};
 
   useEffect(() => {
     fetchApod(day)

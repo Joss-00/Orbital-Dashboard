@@ -7,8 +7,8 @@ import { useLoaderData, type LoaderFunction } from "react-router-dom";
 const newsParams = {
   news_site_exclude: "SpacePolicyOnline.com",
   limit: 9,
-  ordering: "published_at",
-  summary_contains: "webb"
+  search: "webb",
+  ordering: "-published_at"
 }
 
 const imagesParams = {
@@ -18,7 +18,7 @@ const imagesParams = {
 
 export const newsFetch = async(): Promise<News[] | null> => {
   try {
-    const response = await snapiCustomFetch.get<NewsResponse>("", {params :newsParams})
+    const response = await snapiCustomFetch.get<NewsResponse>("/articles", {params :newsParams})
     return response.data.results;
   } catch (error) {
     console.log(error);
@@ -28,7 +28,7 @@ export const newsFetch = async(): Promise<News[] | null> => {
 
 export const imageryFetch = async(): Promise<WebbImage[] | null> => {
   try {
-    const response = await webbCustomFetch.get<WebbImagesResponse>("", {params :imagesParams})  
+    const response = await webbCustomFetch.get<WebbImagesResponse>("/all/type/jpg", {params :imagesParams})  
     console.log("RAW imagery response", response.data) 
     return response.data.body
   } catch (error) {

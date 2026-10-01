@@ -6,7 +6,7 @@ import type { LoaderFunction } from "react-router-dom"
 import { useLoaderData } from "react-router-dom"
 
 const newsParams = {
-  news_site_exclude: "SpacePolicyOnline.com",
+  news_site_exclude_contains: "SpacePolicyOnline.com",
   limit: 20,
   ordering: "-published_at",
 };
@@ -19,7 +19,7 @@ export const newsPageLoader: LoaderFunction = async ({request}): Promise<NewsRes
       ...newsParams,
     };
     
-    const response = await snapiCustomFetch.get<NewsResponse>("", {
+    const response = await snapiCustomFetch.get<NewsResponse>("/articles", {
       params: formattedParams,
     })
     return {response: response.data, params};
